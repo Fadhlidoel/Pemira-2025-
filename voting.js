@@ -27,7 +27,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyAGtdqP2YT3J14rTfY3BXqWg3Kgzxuli_0",
     authDomain: "data-pemira-v2.firebaseapp.com",
     projectId: "data-pemira-v2",
-    storageBucket: "data-pemira-v2.firebasestorage.app",
+   storageBucket: "data-pemira-v2.appspot.com", // ✅ format benar
     messagingSenderId: "388029782225",
     appId: "1:388029782225:web:f33ce63f24c44ff19fcdf0",
     measurementId: "G-9W5614GKQZ"
@@ -267,8 +267,8 @@ async function handleLanjutkan() {
         showPage('pageVoting');
 
     } catch (error) {
-        console.error("Error saat cek duplikat:", error);
-        showError(formDataDiri, "Terjadi kesalahan. Coba lagi.");
+        console.error("Error saat cek duplikat:", error.code, error.message);
+        showError(formDataDiri, "Terjadi kesalahan:" + error.message);
     } finally {
         isSubmitting = false;
         btnLanjutkan.disabled = false;
