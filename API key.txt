@@ -1,8 +1,0 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyAAMniwHKZMz1Vxtfk6U7-yN2nGi_i_KjY",
-  authDomain: "data-pemira-2025.firebaseapp.com",
-  projectId: "data-pemira-2025",
-  storageBucket: "data-pemira-2025.firebasestorage.app",
-  messagingSenderId: "138250571821",
-  appId: "1:138250571821:web:505c345b1106f4c34528a4"
-};
