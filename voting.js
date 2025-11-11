@@ -41,7 +41,7 @@ let isAuthReady = false; // Flag untuk menandakan auth siap
 
 // Path koleksi di Firestore
 // Kita gunakan koleksi publik untuk memeriksa duplikat dari *semua* pemilih
-const votersCollectionPath = `/artifacts/${appId}/public/data/voters`;
+const votersCollectionPath = `voters`;
 
 // --- Variabel State Aplikasi ---
 let selectedCandidate = null; // Menyimpan kandidat yang dipilih (1, 2, or 3)
