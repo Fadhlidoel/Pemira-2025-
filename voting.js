@@ -15,7 +15,8 @@ import {
     query, 
     where, 
     serverTimestamp,
-    setLogLevel
+    setLogLevel,
+    limit
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 // --- Variabel Global & Konfigurasi Firebase ---
@@ -235,7 +236,7 @@ async function handleLanjutkan() {
 
     try {
         // 1. Cek duplikat berdasarkan Email
-        const emailQuery = query(collection(db, votersCollectionPath), where("email", "==", email));
+        const emailQuery = query(collection(db, votersCollectionPath), where("email", "==", email), limit(1));
         const emailSnapshot = await getDocs(emailQuery);
         
         if (!emailSnapshot.empty) {
@@ -248,7 +249,7 @@ async function handleLanjutkan() {
         }
 
         // 2. Cek duplikat berdasarkan No. Telepon
-        const teleponQuery = query(collection(db, votersCollectionPath), where("telepon", "==", telepon));
+        const teleponQuery = query(collection(db, votersCollectionPath), where("telepon", "==", telepon), limit(1));
         const teleponSnapshot = await getDocs(teleponQuery);
 
         if (!teleponSnapshot.empty) {
