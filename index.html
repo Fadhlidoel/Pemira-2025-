@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemira 2025</title>
+
+    <style>
+
+        body,html{
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color:#111827 ;
+            color: #E5E7EB;
+            line-height: 1.6;
+        }
+
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 16px;
+        }
+
+        .card{
+            width: 100%;
+            max-width: 448px;
+            background-color:  #1F2937;
+            border-radius: 25px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            padding: 32px;
+            box-sizing: border-box;
+        }
+
+        .card-candidate{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #22D3EE;
+            border-radius: 10px;
+            margin-bottom: 32px;
+            padding: 8px 8px;
+            gap:0px;
+            text-align: center;
+        }
+
+        .card-candidate h5{
+            margin: 12px;
+        }
+
+        .card-candidate p{
+            margin-top: 0;
+            margin-bottom: 16px;
+            text-align: center justify;
+        }
+        .image-candidate{
+            width:100%;
+            height: 190px;
+            background-color: #374151;
+            border-radius: 8px;
+        }
+        .card-selesai{
+            padding: 48px 32px;
+            text-align: center;
+        }
+
+        h1{
+            font-size: 40px;
+            font-weight:700;
+            color: #22D3EE;
+            margin-top: 0;
+            margin-bottom: 23px;
+        }
+
+        h5{
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .sub-header{
+            font-size: 18px;
+            font-weight: 400;
+            color:#9CA3AF;
+            margin-bottom: 24px;
+        }
+
+        .sub-header-selesai{
+            font-size: 14px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .header-selesai{
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .form-group{
+            margin-bottom: 20px;
+        }
+
+        .form-group label{
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #D1D5DB;
+            margin-bottom: 8px;
+        }
+
+        .form-input{
+            width: 100%;
+            padding: 12px 16px;
+            background-color:#374151 ;
+            border-radius: 8px;
+            color:#ffffff;
+            box-sizing: border-box;
+            border:0;
+
+            transition: box-shadow 0.2s;
+        }
+
+        .form-select{
+            width: 100%;
+            padding: 12px 16px;
+            border:0;
+            border-radius: 8px;
+            background-color: #374151;
+            color: #ffffff;
+            box-sizing: border-box;
+            transition: box-shadow 0.2s;
+
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 48px;
+        }
+
+        .form-select:invalid{
+            color: #9CA3AF;
+        }
+
+        .form-select option{
+            color: #FFFFFF;
+            background: #374151;
+        }
+
+        .form-input::placeholder{
+            color: #9CA3AF;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #06B6D4;
+        }
+
+        .btn{
+            width: 100%;
+            min-height: 32px;
+            font-weight: 600;
+            border:none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn:disabled{
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-terpilih {
+            background-color: #22C55E !important;
+            color: #ffffff !important;
+        }
+
+        .btn-merah{
+            background-color: #DC2626;
+            color:#ffffff;
+        }
+
+        .btn-merah:active{
+            background-color: #B91C1C;
+        }
+
+        .btn-abu{
+            background-color: #4B5563;
+            color: #FFFFFF;
+        }
+        .btn-abu:active{
+            background-color: #374151;
+        }
+
+        .btn-kuning{
+             background-color: #ffc919;
+            color: #1F2937;
+        }
+
+        .btn-cyan {
+            background-color: #0891B2;
+            color: #FFFFFF;
+        }
+
+        .btn-cyan:active{
+            background-color: #0E7490;
+        }
+
+        .button-group{
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .button-group .btn{
+            width: 50%;
+        }
+
+        .icon-cek{
+            width: 180px;
+            height: auto;
+            color: #22C55E;
+            margin: 0 32px;
+            align-items: center;
+        }
+
+        #pageVoting, #pageSelesai{
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--KONTEN UTAMA-->
+    <div class="container">
+
+        <!--HALAMAN-1: DATA DIRI-->
+        <div id="pageDataDiri">
+
+            <div class="card">
+                <h1>Pemilihan Raya 2025</h1>
+                <p class="sub-header">Isi Data Diri Sebelum Melanjutkan</p>
+
+                <form id="formDataDiri">
+
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" class="form-input"required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prodi">Prodi</label>
+                        <select id="prodi" name="prodi" class="form-select" required>
+                            <option value="" disabled selected >Pilih Prodi</option>
+                            <option value="TKN">TKN</option>
+                            <option value="ELINS">ELINS</option>
+                            <option value="ELMEK">ELMEK</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telepon">No. Telepon</label>
+                        <input type="tel" id="telepon" name="telepon" placeholder="Masukkan No. Telepon" class="form-input"required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Masukkan Email Aktif" class="form-input"required>
+                    </div>
+
+                    <div style="margin-top: 32px;">
+                        <button type="button" id="btnLanjutkan" class="btn btn-merah">
+                            Lanjutkan
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <!--HALAMAN-2: VOTE-->
+        <div id="pageVoting">
+
+            <div class="card">
+                <h1>Halaman Voting</h1>
+                <p class="sub-header">Silahkan Pilih Kandidat</p>
+
+                <div class="card-candidate">
+                    <h5>Kadidat 1</h5>
+                    <div class="image-candidate"></div>
+                    <h5>Visi</h5>
+                    <p>text untuk visi kandidat</p>
+                    <button type="button" id="btnPilih1" class="btn btn-kuning">vote</button>
+                </div>
+
+                <div class="card-candidate">
+                    <h5>Kadidat 2</h5>
+                    <div class="image-candidate"></div>
+                    <h5>Visi</h5>
+                    <p>text untuk visi kandidat</p>
+                    <button type="button" id="btnPilih2" class="btn btn-kuning">vote</button>
+                </div>
+
+                <div class="card-candidate">
+                    <h5>Kadidat 3</h5>
+                    <div class="image-candidate"></div>
+                    <h5>Visi</h5>
+                    <p>text untuk visi kandidat</p>
+                    <button type="button" id="btnPilih3" class="btn btn-kuning">vote</button>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="btnKembaliKeData" class="btn btn-abu">
+                        Kembali
+                    </button>
+                
+                    <button type="button" id="btnSubmitVote" class="btn btn-merah">
+                        Submit Pilihan
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!--HALAMAN-3: PESAN PANITIA-->
+        <div id="pageSelesai" class="w-full max-w-md">
+            <div class="card card-selesai">
+                
+                <!--Ikon Cek-->
+                <svg class="icon-cek" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                
+                <h5 class="header-selesai">Terima kasih karena telah ikut berpartisipasi pada Pemilihan Raya 2025</h5>
+                <p class="sub-header-selesai">Salam Hangat Panitia PEMIRA 2025</p>
+
+                <button type="button" id="btnKembaliKeAwal" class="btn btn-cyan">
+                    Selesai
+                </button>
+
+            </div>
+        </div> 
+
+
+    </div> <!--penutup container-->
+        <script type="module" src="voting.js"></script>
+
+</body>
+</html>
